@@ -1,13 +1,14 @@
 package wrh;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+       MatchRequester mr = new MatchRequester();
+       try {
+    	   System.out.println(mr.getResponse());
+       } catch (Exception e) {
+    	   System.out.println(e.toString());
+       }
     }
 }
