@@ -19,8 +19,19 @@ public class FSURLBuilder {
 	/* default apikey for the fox sports api. */
 	private String apikey = "jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq";
 	
+	/*
+	 * Constructor to build the URL for TODAY.
+	 */
 	public FSURLBuilder() {
 		buildURL();
+	}
+	
+	/*
+	 * Constructor to build the URL for a data passed in.
+	 * date format: yyyymmdd, eg: june 1 2020 <=> 20200601.
+	 */
+	public FSURLBuilder(String date) {
+		buildURL(date);
 	}
 	
 	private String getDate() {
@@ -31,6 +42,10 @@ public class FSURLBuilder {
 	
 	private void buildURL() {
 		url = url + "date=" + getDate() + "&" + "apikey=" + apikey;
+	}
+	
+	private void buildURL(String date) {
+		url = url + "date=" + date + "&" + "apikey=" + apikey;
 	}
 	
 	/* use to get the url, after it's built. */

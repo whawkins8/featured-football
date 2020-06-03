@@ -13,6 +13,10 @@ public class MatchRequester {
 		urlBuilder = new FSURLBuilder();
 	}
 	
+	public MatchRequester(String date) {
+		urlBuilder = new FSURLBuilder(date);
+	}
+	
 	private String get(String uri) throws Exception {
 		HttpClient client = HttpClient.newHttpClient();
 		
