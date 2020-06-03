@@ -1,21 +1,44 @@
 package wrh;
 
+import java.util.ArrayList;
+
 public class App {
 	public static void main(String[] args) {
-		MatchRequester mr = new MatchRequester("20200604");
-		String response;
 		
+		/* 
+		 * parse cl args, eg to email, from email, authentication...
+		 */
+		
+		
+		/* 
+		 * run an api request, get match information from FS.
+		 */
+		MatchRequester mr = new MatchRequester();
+		String response;
 		try {
 			response = mr.getResponse();
 		} catch (Exception e) {
 			e.printStackTrace();
-			response = "";
+			System.out.println("unable to connect to server.");
+			return;
 		}
 		
-		JsonParser json = new JsonParser(response);
-		for (Match m : json.getMatches()) {
-			System.out.println(m);
+		/* 
+		 * parse the api response into email format. 
+		 */
+		JsonParser jp = new JsonParser(response);
+		
+		/* if we have 0 matches today, terminate the program. */
+		if (jp.numMatches() == 0) {
+			return;
 		}
+		ArrayList<Match> matches = jp.getMatches();
+		
+		/* 
+		 * send the email 
+		 */
+		
+		
 	}
 }
     

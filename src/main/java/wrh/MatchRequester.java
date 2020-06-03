@@ -4,7 +4,6 @@ import java.net.URI;
 import java.net.http.*;
 import java.net.http.HttpResponse.BodyHandlers;
 
-
 public class MatchRequester {
 	private FSURLBuilder urlBuilder;
 	
