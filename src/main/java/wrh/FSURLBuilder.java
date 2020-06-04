@@ -35,6 +35,7 @@ public class FSURLBuilder {
 	}
 	
 	private String getDate() {
+		/* get today's date in our appropriate format */
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMdd");
 		LocalDateTime now = LocalDateTime.now();
 		return dtf.format(now);
