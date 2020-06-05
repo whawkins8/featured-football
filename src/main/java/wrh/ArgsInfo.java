@@ -19,9 +19,7 @@ public class ArgsInfo {
 		this.port = port;
 	}
 	
-	public ArgsInfo() {
-		
-	}
+	public ArgsInfo() {}
 	
 	/*
 	 * Read jsonFile, and create a new ArgsInfo with that data.

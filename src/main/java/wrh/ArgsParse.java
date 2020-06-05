@@ -28,7 +28,7 @@ public class ArgsParse {
 		String server = in.nextLine();
 		System.out.println("");
 		
-		System.out.println("Lastly, what port should we use to send mail? (for gmx, enter 25)");
+		System.out.println("Lastly, what port should we use to send mail? (for gmx, enter 587)");
 		int port = in.nextInt();
 		
 		info = new ArgsInfo(to, from, server, pw, port);
